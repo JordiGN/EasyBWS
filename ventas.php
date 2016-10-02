@@ -6,7 +6,7 @@ if($_SERVER["REQUEST_METHOD"]=="GET") {
     $fechaFin = $_GET['fechaFin'];*/
     global $connect;
 
-    $query= "SELECT ventas.id_usuario as id_usuario, ventas.id_venta as idventa, productos.nombre as nombreproducto, productos.precio as precioproducto, ventas.unidades_vendidas as cantidad, ventas.modo_pago as modopago, ventas.fecha as fechaventa, ventas.total as totalventa, productos.id_producto as idProducto FROM ventas JOIN productos ON ventas.id_producto = productos.id_producto ORDER BY id_venta ASC";
+    $query= "SELECT ventas.id_usuario as id_usuario, ventas.id_venta as idventa, productos.nombre as nombreproducto, productos.precio as precioproducto, ventas.unidades_vendidas as cantidad, ventas.modo_pago as modopago, ventas.fecha as fechaventa, ventas.total as totalventa, productos.id_producto as idProducto FROM ventas JOIN productos ON ventas.id_producto = productos.id_producto ORDER BY id_venta DESC";
     /*AND WHERE ventas.fecha >= fechaInicio AND WHERE ventas.fecha <= fechaFin";*/
 
     $result = mysqli_query($connect,$query);
